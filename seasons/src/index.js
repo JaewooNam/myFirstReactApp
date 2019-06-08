@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
+import SeasonDisplay from './SeasonDisplay'
 // Rule of Class Component
 // Must be a JS class
 // Must extend react.component
@@ -27,27 +27,25 @@ class App extends React.Component {
   // first called
   // State must be initialized when a component is created
   // State cna onluy be updated using the function 'setState'
-  constructor(props) {
-    super(props)
+  
+  state  = { lat: null, errorMessage: '' }
 
-    // Initialize state
-    // key value pair
-    // THIS IS THE ONLY TIME we do direct assignment
-    // to this.state
-    this.state = { lat: null, errorMessage: '' }
-
+  componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
-      position => {
-        this.setState({ lat: position.coords.latitude })
-        // we did not !!
-        // this.state.lat = position.coords.latitude
-      },
-      err => {
-        this.setState({ errorMessage: err.message })
-      }
+      position => this.setState({ lat: position.coords.latitude }),
+      err => this.setState({ errorMessage: err.message })
     )
   }
 
+  componentDidUpdate() {
+    // everytime new props, click buttons..like this
+  }
+
+  componentWillUnmount() {
+    // remove component from screen
+    
+  }
+  
   // React says we have to define render!!
   render() {
     if  (this.state.errorMessage && !this.state.lat) {
@@ -55,7 +53,8 @@ class App extends React.Component {
     }
 
     if (!this.state.errorMessage && this.state.lat) {
-      return <div>Latitude: {this.state.lat}</div>
+      // send propt to seandisplay
+      return <SeasonDisplay lat={this.state.lat} />
     }
 
     return <div>Loading!</div>
