@@ -16,16 +16,21 @@ class SearchBar extends React.Component {
   * Input is told what its value is (coming from state)
   */
 
-  onFormSubmit(event) {
+  onFormSubmit = (event) => {
     event.preventDefault()
-    
+    // this is not equal search bar class
     console.log(this.state.term) // error
+    // What is 'this' used for in a class?
+    // How is the value of 'this' determined in a function ?
+    // -> arrow  function can be solved
   }
 
   render() {
     return (
       <div className="ui segment">
-        <form onSubmit={this.onFormSubmit} className="ui form">
+        <form
+          onSubmit={this.onFormSubmit}
+          className="ui form">
           <div className="field">
             <label>Image Search</label>
             <input
