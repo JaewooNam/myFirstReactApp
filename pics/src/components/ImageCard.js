@@ -14,9 +14,10 @@ class ImageCard extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.imageRef)
-    // why console.log 0 ???
-    // beacuse console.log works before image loaded
+    this.imageRef.current.addEventListener('load', this.setSpans)
+  }
+
+  setSpans = () => {
     console.log(this.imageRef.current.clientHeight)
   }
 
