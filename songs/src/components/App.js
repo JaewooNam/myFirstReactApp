@@ -1,5 +1,5 @@
 import React from 'react'
-
+import SongList from './SongList'
 /*
  * < Redux >
  * Reducers - song list reducer, selected song reducer
@@ -15,7 +15,11 @@ import React from 'react'
 //   index.js - Sets up both the react and redux sides of the app
 
 const App = () => {
-  return <div>App</div>
+  return (
+    <div>
+      <SongList />
+    </div>
+  ) 
 }
 
 export default App
