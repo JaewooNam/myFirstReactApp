@@ -1,3 +1,4 @@
+// anytime we update data, we call anction creator
 // Action creator
 // named export
 export const selectSong = song => {
