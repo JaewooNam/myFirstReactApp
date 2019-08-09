@@ -13,4 +13,5 @@ export const decrement = () => ({
 
 export const setColor = (color) => ({
   type: types.SET_COLOR,
+  color
 });
