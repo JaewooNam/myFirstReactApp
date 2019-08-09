@@ -1,1 +1,1 @@
-## Redux Timer
+## Redux Counter
