@@ -14,5 +14,5 @@ what value to return
 Must not mutate its input state argument
 */
 export default combineReducers({
-  posts: postsReducer
+  posts: postsReducer,
 })
