@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
 import postsReducer from './postReducer'
+import userReducer from './usersReducer'
 
 /*
 Rules of Reducers
@@ -15,4 +16,5 @@ Must not mutate its input state argument
 */
 export default combineReducers({
   posts: postsReducer,
+  users: userReducer,
 })
